@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>IRONFORGE — Where Limits Go to Die</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Syncopate:wght@400;700&family=Outfit:wght@300;400;500;700&family=Playfair+Display:ital,wght@0,700;1,400&display=swap" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            acid: '#DFFF00', void: '#000000', carbon: '#050505',
+            graphite: '#0D0D0D', smoke: '#1A1A1A',
+            cyan: '#00FFFF', plasma: '#BF5AF2', ember: '#FF6B35',
+          },
+          fontFamily: {
+            hero: ['Syncopate', 'sans-serif'],
+            body: ['Outfit', 'sans-serif'],
+            serif: ['Playfair Display', 'serif'],
+          }
+        }
+      }
+    }
+  </script>
+
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+  <!-- Noise overlay -->
+  <div class="noise" aria-hidden="true"></div>
+
+  <!-- Three.js Background -->
+  <canvas id="bg-canvas"></canvas>
+
+  <!-- NAV -->
+  <nav>
+    <a href="#" class="nav-logo">IRONFORGE</a>
+    <ul class="nav-links">
+      <li><a href="#services">Training</a></li>
+      <li><a href="#transform">Results</a></li>
+      <li><a href="#pricing">Pricing</a></li>
+      <li><a href="#cta">Join</a></li>
+    </ul>
+    <a href="#cta" class="btn-acid" style="padding: 0.7rem 1.5rem; font-size: 0.65rem;">START NOW</a>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero bg-grid">
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+    <div class="hero-inner">
+      <div class="fomo-badge reveal">
+        <span class="fomo-dot"></span>
+        47 new members this month
+      </div>
+      <h1 class="hero-title reveal">
+        WHERE<br><span class="title-accent" id="scramble-title">LIMITS</span><br>GO TO DIE
+      </h1>
+      <p class="hero-sub reveal">This isn't a gym. It's a war machine built for people who refuse to be ordinary. Every rep. Every drop of sweat. Every breakthrough — engineered here.</p>
+      <div class="flex gap-4 justify-center flex-wrap reveal" style="margin-top: 3rem;">
+        <a href="#cta" class="btn-acid btn-magnetic">Claim Your Spot →</a>
+        <a href="#transform" class="btn-ghost btn-magnetic">See Results</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- TICKER -->
+  <div class="ticker" aria-hidden="true">
+    <div class="ticker-track">
+      <span>STRENGTH</span><span class="sep">★</span>
+      <span>CONDITIONING</span><span class="sep">★</span>
+      <span>POWERLIFTING</span><span class="sep">★</span>
+      <span>HIIT</span><span class="sep">★</span>
+      <span>RECOVERY</span><span class="sep">★</span>
+      <span>NUTRITION</span><span class="sep">★</span>
+      <span>RESULTS</span><span class="sep">★</span>
+      <span>NO EXCUSES</span><span class="sep">★</span>
+      <!-- duplicate for loop -->
+      <span>STRENGTH</span><span class="sep">★</span>
+      <span>CONDITIONING</span><span class="sep">★</span>
+      <span>POWERLIFTING</span><span class="sep">★</span>
+      <span>HIIT</span><span class="sep">★</span>
+      <span>RECOVERY</span><span class="sep">★</span>
+      <span>NUTRITION</span><span class="sep">★</span>
+      <span>RESULTS</span><span class="sep">★</span>
+      <span>NO EXCUSES</span><span class="sep">★</span>
+    </div>
+  </div>
+
+  <!-- STATS -->
+  <section class="stats-section">
+    <div class="stats-grid stagger">
+      <div class="stat-card reveal" style="--i:0">
+        <span class="stat-number" data-target="2400">0</span><span class="stat-suffix">+</span>
+        <p class="stat-label">Active Members</p>
+      </div>
+      <div class="stat-card reveal" style="--i:1">
+        <span class="stat-number" data-target="97">0</span><span class="stat-suffix">%</span>
+        <p class="stat-label">Retention Rate</p>
+      </div>
+      <div class="stat-card reveal" style="--i:2">
+        <span class="stat-number" data-target="12">0</span><span class="stat-suffix">K+</span>
+        <p class="stat-label">Lbs Lost Collectively</p>
+      </div>
+      <div class="stat-card reveal" style="--i:3">
+        <span class="stat-number" data-target="8">0</span><span class="stat-suffix"></span>
+        <p class="stat-label">Elite Coaches</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section class="services-section" id="services">
+    <div style="max-width: 1200px; margin: 0 auto;">
+      <p class="section-label reveal">What We Offer</p>
+      <h2 class="section-title reveal">FORGE YOUR<br>WEAPON</h2>
+      <div class="service-grid">
+        <div class="service-card card-3d reveal stagger" style="--i:0">
+          <span class="service-number">01</span>
+          <span class="service-icon">⚡</span>
+          <h3>Strength & Power</h3>
+          <p>Olympic lifting, powerlifting, and progressive overload programming built by coaches who compete at national level. No guesswork. Only gains.</p>
+          <div class="service-bar"></div>
+        </div>
+        <div class="service-card card-3d reveal stagger" style="--i:1">
+          <span class="service-number">02</span>
+          <span class="service-icon">🔥</span>
+          <h3>High-Intensity Conditioning</h3>
+          <p>Metabolic circuits and HIIT protocols that shred fat while protecting muscle. In and out in 45 minutes. Results that last forever.</p>
+          <div class="service-bar"></div>
+        </div>
+        <div class="service-card card-3d reveal stagger" style="--i:2">
+          <span class="service-number">03</span>
+          <span class="service-icon">🧠</span>
+          <h3>1-on-1 Coaching</h3>
+          <p>Your dedicated coach maps your body, your goals, and your timeline. Then builds a custom war plan that puts you on the fastest route to transformation.</p>
+          <div class="service-bar"></div>
+        </div>
+        <div class="service-card card-3d reveal stagger" style="--i:3">
+          <span class="service-number">04</span>
+          <span class="service-icon">🥗</span>
+          <h3>Nutrition Architecture</h3>
+          <p>Macros, timing, supplementation. Your fuel plan is calibrated to your specific physiology — not a template from a blog post from 2012.</p>
+          <div class="service-bar"></div>
+        </div>
+        <div class="service-card card-3d reveal stagger" style="--i:4">
+          <span class="service-number">05</span>
+          <span class="service-icon">♾️</span>
+          <h3>Recovery & Mobility</h3>
+          <p>Infrared sauna, cold plunge, deep tissue work. Because the best athletes in the world know: recovery IS training.</p>
+          <div class="service-bar"></div>
+        </div>
+        <div class="service-card card-3d reveal stagger" style="--i:5">
+          <span class="service-number">06</span>
+          <span class="service-icon">🏆</span>
+          <h3>Competition Prep</h3>
+          <p>Bodybuilding, powerlifting, or functional fitness — our coaches have taken athletes from zero to podium. Multiple times.</p>
+          <div class="service-bar"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TRANSFORMATION -->
+  <section class="transform-section" id="transform">
+    <div class="transform-grid">
+      <div>
+        <p class="section-label reveal">Real People. Real Results.</p>
+        <h2 class="transform-headline reveal">PROOF<br>OVER<br>PROMISE</h2>
+        <p class="transform-body reveal">We don't deal in before-and-after marketing. We deal in the numbers that matter — weight lifted, body fat dropped, confidence rebuilt from scratch.</p>
+
+        <div class="progress-wrap reveal">
+          <div class="progress-label"><span>Average Fat Loss</span><span>28 lbs</span></div>
+          <div class="progress-track"><div class="progress-fill" style="--target-w: 85%"></div></div>
+
+          <div class="progress-label"><span>Strength Increase</span><span>43%</span></div>
+          <div class="progress-track"><div class="progress-fill" style="--target-w: 72%"></div></div>
+
+          <div class="progress-label"><span>Member Satisfaction</span><span>99%</span></div>
+          <div class="progress-track"><div class="progress-fill" style="--target-w: 99%"></div></div>
+
+          <div class="progress-label"><span>Goal Achievement Rate</span><span>91%</span></div>
+          <div class="progress-track"><div class="progress-fill" style="--target-w: 91%"></div></div>
+        </div>
+      </div>
+
+      <div class="testimonial-stack">
+        <div class="testimonial-card glass reveal" style="--i:0">
+          <p class="testimonial-text">"I spent three years at commercial gyms going nowhere. Six months at Ironforge and I deadlifted 405 for the first time. The programming is surgical."</p>
+          <div class="testimonial-author">Marcus T. — Member since 2024</div>
+          <div class="testimonial-result">Lost 34 lbs · Deadlift: 195 → 405 lbs</div>
+        </div>
+        <div class="testimonial-card glass reveal" style="--i:1">
+          <p class="testimonial-text">"I came in as a complete beginner, convinced I'd never belong in a gym. Now I coach other beginners here. Ironforge didn't just change my body — it changed my identity."</p>
+          <div class="testimonial-author">Priya K. — Member since 2023</div>
+          <div class="testimonial-result">Lost 22 lbs · Completed first powerlifting meet</div>
+        </div>
+        <div class="testimonial-card glass reveal" style="--i:2">
+          <p class="testimonial-text">"The coaches see things my previous trainers never caught. My squat mechanics were off for years. Fixed in two sessions. The attention to detail here is unreal."</p>
+          <div class="testimonial-author">Devon R. — Member since 2025</div>
+          <div class="testimonial-result">Squat PR: 275 → 365 lbs in 90 days</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRICING -->
+  <section class="pricing-section" id="pricing">
+    <div style="max-width: 1000px; margin: 0 auto;">
+      <p class="section-label reveal" style="text-align:center">No Hidden Fees. No Contracts.</p>
+      <h2 class="section-title reveal" style="text-align:center; margin: 0 auto 0; max-width: 100%;">PICK YOUR<br>WEAPON</h2>
+      <div class="pricing-grid">
+        <div class="pricing-card reveal">
+          <p class="pricing-name">Recruit</p>
+          <div class="pricing-price">₹3,499</div>
+          <p class="pricing-period">/ month</p>
+          <ul class="pricing-features">
+            <li><span class="check">✓</span> Unlimited gym access</li>
+            <li><span class="check">✓</span> Group classes (8/week)</li>
+            <li><span class="check">✓</span> App programming</li>
+            <li><span class="check">✓</span> Locker access</li>
+          </ul>
+          <a href="#cta" class="btn-ghost" style="width:100%; justify-content:center;">Get Started</a>
+        </div>
+        <div class="pricing-card featured reveal">
+          <div class="pricing-badge">Most Popular</div>
+          <p class="pricing-name">Warrior</p>
+          <div class="pricing-price" style="color:#000">₹6,999</div>
+          <p class="pricing-period">/ month</p>
+          <ul class="pricing-features">
+            <li><span class="check">✓</span> Everything in Recruit</li>
+            <li><span class="check">✓</span> 4× monthly coaching sessions</li>
+            <li><span class="check">✓</span> Custom nutrition plan</li>
+            <li><span class="check">✓</span> Recovery suite access</li>
+            <li><span class="check">✓</span> Progress tracking dashboard</li>
+          </ul>
+          <a href="#cta" class="btn-dark" style="width:100%; justify-content:center;">Join Now →</a>
+        </div>
+        <div class="pricing-card reveal">
+          <p class="pricing-name">Elite</p>
+          <div class="pricing-price">₹12,999</div>
+          <p class="pricing-period">/ month</p>
+          <ul class="pricing-features">
+            <li><span class="check">✓</span> Everything in Warrior</li>
+            <li><span class="check">✓</span> Dedicated personal coach</li>
+            <li><span class="check">✓</span> Weekly check-ins & adjustments</li>
+            <li><span class="check">✓</span> Competition prep support</li>
+            <li><span class="check">✓</span> Unlimited recovery suite</li>
+            <li><span class="check">✓</span> Priority booking — all classes</li>
+          </ul>
+          <a href="#cta" class="btn-ghost" style="width:100%; justify-content:center;">Go Elite</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA BANNER -->
+  <section class="cta-section" id="cta">
+    <div class="cta-bg-text" aria-hidden="true">NOW</div>
+    <div style="position: relative; z-index: 1;">
+      <h2 class="cta-title reveal">THE TIME<br>IS NOW</h2>
+      <p class="cta-sub reveal">Every day you wait is a day your competition doesn't. Your transformation begins the moment you decide. Not tomorrow. Now.</p>
+      <div class="reveal">
+        <a href="tel:+911234567890" class="btn-dark btn-magnetic" style="font-size: 0.85rem; padding: 1.4rem 3.5rem;">
+          Book Your Free Assessment →
+        </a>
+      </div>
+      <p style="margin-top: 1.5rem; font-family: var(--font-hero); font-size: var(--fs-caption); color: rgba(0,0,0,0.45); letter-spacing: 0.12em; text-transform: uppercase;">No commitment. No BS. Just results.</p>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-logo">IRONFORGE</div>
+    <p class="footer-copy">© 2026 Ironforge Gym. All rights reserved.</p>
+    <ul class="footer-links">
+      <li><a href="#">Instagram</a></li>
+      <li><a href="#">Contact</a></li>
+      <li><a href="#">Privacy</a></li>
+    </ul>
+  </footer>
+
+<script src="assets/js/main.js"></script>
+</body>
+</html>
